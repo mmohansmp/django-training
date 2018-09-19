@@ -6,6 +6,7 @@ from django.template import loader
 from django.http import HttpResponse
 
 
+
 # Create your views here.
 
 def index(req):
@@ -13,4 +14,4 @@ def index(req):
 
 def index_html(req):
     template = loader.get_template('index.html')
-    return HttpResponse(template.render({}, req))
+    return HttpResponse(template.render({ 'name':'Mohan', 'req':  req}, req))
