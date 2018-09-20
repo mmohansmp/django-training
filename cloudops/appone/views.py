@@ -6,6 +6,7 @@ from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect
 
 from django.contrib.auth import authenticate, login
+from models import Request
 
 
 
@@ -56,3 +57,16 @@ def main_block(req):
                  'req': req
               }
     return HttpResponse(template.render(context, req))
+
+def request(req):
+    if req.method == 'POST':
+        ureq = Request(user=req.POST['username'],
+                      password=req.POST['password'],
+                      command=req.POST['command'] )
+        ureq.save()
+        template = loader.get_template('request.html')
+        context = {
+                 'req': req,
+                 'ureq': ureq
+              }
+        return HttpResponse(template.render(context, req))

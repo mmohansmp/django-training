@@ -1,5 +1,11 @@
 {% extends 'main.html' %}
 
 {% block process %}
-   <p> Ad Hoc Command Block </p>
+  <form method="POST" action="/appone/request/">
+    <input type="text" id="username" name="username" placeholder="username"/>
+    <input type="password" id="password" name="password" placeholder="password"/>
+    <input type="text" id="command" name="command" placeholder="command"/>
+    <button type="submit" value="submit">Submit</button>
+    {% csrf_token %}
+  </form>
 {% endblock %}

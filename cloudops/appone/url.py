@@ -10,6 +10,7 @@ urlpatterns = [
    url(r'home', views.home, name='home'),
    url(r'authenticate', views.auth, name='authenticate'),
    url(r'main', views.main_block, name='main'),
-   url(r'process', views.process, name='main')
+   url(r'process', views.process, name='process'),
+   url(r'request', views.request, name='request')
 ]
 
