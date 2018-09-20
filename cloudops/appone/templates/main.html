@@ -4,8 +4,15 @@
 
 <br>
 <div class="row">
-  <div class="col-md-12 border border-primary ">
-     <p class="text text-primary"> Main Page </p>
+  <div class="col-md-3 border border-dark ">
+    <ul>
+      <li><a href="/appone/process?name=adcmd">Ad-Hoc Command</a></li>
+      <li><a href="/appone/process?name=another">Another Command</a></li>
+    </ul>
+  </div>
+  <div class="col-md-7 border border-primary ">
+    {% block process %}
+    {% endblock %}
   </div>
 </div> 
 

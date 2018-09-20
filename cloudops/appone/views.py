@@ -39,6 +39,17 @@ def home(req):
               }
     return HttpResponse(template.render(context, req))
 
+def process(req):
+    if req.GET['name'] == 'adcmd':
+        template = loader.get_template('ad-hoc.html')
+    elif req.GET['name'] == 'another'  :
+        template = loader.get_template('another.html')
+    else:
+        template = loader.get_template('nproc.html')
+    context = {
+                 'req': req
+              }
+    return HttpResponse(template.render(context, req))
 def main_block(req):
     template = loader.get_template('main.html')
     context = {

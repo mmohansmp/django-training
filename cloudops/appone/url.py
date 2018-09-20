@@ -9,6 +9,7 @@ urlpatterns = [
    url(r'html', views.index_html, name='index_html'),
    url(r'home', views.home, name='home'),
    url(r'authenticate', views.auth, name='authenticate'),
-   url(r'main', views.main_block, name='main')
+   url(r'main', views.main_block, name='main'),
+   url(r'process', views.process, name='main')
 ]
 
