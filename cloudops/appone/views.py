@@ -34,4 +34,14 @@ def auth(req):
 
 def home(req):
     template = loader.get_template('layout.html')
-    return HttpResponse(template.render({ 'req':  req}, req))
+    context = {
+                 'req': req
+              }
+    return HttpResponse(template.render(context, req))
+
+def main_block(req):
+    template = loader.get_template('main.html')
+    context = {
+                 'req': req
+              }
+    return HttpResponse(template.render(context, req))
