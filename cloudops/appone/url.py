@@ -7,5 +7,7 @@ app_name = 'appone'
 urlpatterns = [
    url(r'index', views.index, name='index'),
    url(r'html', views.index_html, name='index_html'),
+   url(r'home', views.home, name='home'),
+   url(r'authenticate', views.auth, name='authenticate')
 ]
 
